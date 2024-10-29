@@ -1,0 +1,33 @@
+<h1 mat-dialog-title></h1>
+<div class = "content" mat-dialog-content>
+    <form (ngSubmit)="onSubmit(task)">
+        <div class="form-control">
+            <label for="name">Товар</label>
+            <input type="text" name="name" [(ngModel)]="task.name" id="name" placeholder="Добавьте товар"/>
+        </div>
+        <div class="form-control">
+            <label for="price">Цена</label>
+            <input type="number" name="price" [(ngModel)]="task.price" id="price" placeholder="Добавьте цену"/>
+        </div>
+        <div class="form-control">
+            <label for="count">Количество</label>
+            <input type="number" name="count" [(ngModel)]="task.count" id="count" placeholder="Добавьте кол-во товара"/>
+        </div>
+        <mat-form-field class="measure-select"   >
+               
+            <mat-select name="measure" id="measure" [value] = "task.measure.id" [(ngModel)] = "seletedMeasureId" >
+    
+                    <mat-option
+                    *ngFor="let measure of measureList"
+                    [value] = "measure.id"
+                    > {{measure.name}}</mat-option>
+    
+            </mat-select>
+        </mat-form-field>
+        
+        <input type="submit" value="Сохранить товар" class="btn btn-block"/>
+    </form>
+</div>
+<div mat-dialog-actions>
+        
+</div>

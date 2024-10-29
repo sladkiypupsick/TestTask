@@ -1,0 +1,8 @@
+<form (ngSubmit)="onSubmit(measure)" class="view">
+    <div class="form-control">
+        <label for="name">Изменение</label>
+        <input type="text" name="name" [(ngModel)]="measure.name" id="name" placeholder=" "/>
+    </div>
+    
+    <input type="submit" value="Сохранить" class="btn btn-block" />
+</form>

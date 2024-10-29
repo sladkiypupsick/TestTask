@@ -1,0 +1,12 @@
+<div class = "task">
+    <h3>
+         {{ task.name }} 
+         <fa-icon 
+            (click)="onDelete($event, task)"
+            [icon]="faTimes">
+
+         </fa-icon> 
+        </h3>
+    <p> {{ task.price }} Рублей </p>
+    <p> {{ task.count }} <span *ngIf="task.measure && task.measure.name">{{task.measure.name}}</span></p>
+</div>

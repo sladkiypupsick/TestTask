@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit()">
+    <button type="button" class ="btn" (click)="openMeasureModal()">Единицы измерения</button>
+    <div class="form-control">
+        <label for="name">Товар</label>
+        <input type="text" name="name" [(ngModel)]="name" id="name" placeholder="Добавьте товар"/>
+    </div>
+    <div class="form-control">
+        <label for="price">Цена</label>
+        <input type="number" name="price" [(ngModel)]="price" id="price" placeholder="Добавьте цену"/>
+    </div>
+    <div class="form-control">
+        <label for="count">Количество</label>
+        <input type="number" name="count" [(ngModel)]="count" id="count" placeholder="Добавьте кол-во товара"/>
+    </div>
+    <mat-form-field class="measure-select" >
+               
+        <mat-select name="measure" id="measure" [(ngModel)]="measure">
+
+                <mat-option
+                *ngFor="let measure of measureList"
+                [value] = "measure"
+                > {{measure.name}}</mat-option>
+
+        </mat-select>
+    </mat-form-field>
+    
+    <input type="submit" value="Сохранить товар" class="btn btn-block"/>
+</form>

@@ -1,0 +1,10 @@
+<div class ="content">
+<form (ngSubmit)="onSubmit()">
+    <div class ="content" class="form-control">
+        <label for="name">Единицы измерения</label>
+        <input type="text" name="name" [(ngModel)]="name" id="name" placeholder="Добавьте ед. измерения"/>
+    </div>
+    
+    <input type="submit" value="Сохранить ед. измерения" class="btn btn-block"/>
+</form>
+</div>

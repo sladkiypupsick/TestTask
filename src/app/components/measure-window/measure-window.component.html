@@ -1,0 +1,7 @@
+<app-add-measure (onAddMeasure)="addMeasure($event)"></app-add-measure>
+<app-measure-item
+(click)="openMeasure2Modal(measure)"
+*ngFor="let measure of measures" 
+[measure]="measure"
+(onDeleteMeasure)="deleteMeasure(measure)"
+></app-measure-item>
